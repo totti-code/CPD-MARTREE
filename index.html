@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CPD | Equipe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="top">
+  <div class="topInner">
+    <div class="brand">
+      <div class="logo">CPD</div>
+      <div>
+        <h1>Equipe do CPD</h1>
+        <p class="muted">Conheça o time • Funções • Responsabilidades</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <input id="search" class="input" type="search" placeholder="Buscar pessoa..." autocomplete="off" />
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="card">
+    <h2>Time</h2>
+    <p class="muted">Clique em um card para ver o perfil completo.</p>
+
+    <div id="grid" class="grid" aria-label="Lista de pessoas do CPD"></div>
+  </section>
+
+</main>
+
+<!-- MODAL PERFIL -->
+<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modalBox" role="document" aria-label="Perfil da pessoa">
+    <button id="closeModal" class="btn ghost close" aria-label="Fechar">✕</button>
+
+    <div class="profileHeader">
+      <img id="mAvatar" class="avatarLg" src="" alt="" />
+      <div class="profileTitle">
+        <h3 id="mName">Nome</h3>
+        <p id="mRole" class="muted">Cargo</p>
+
+        <div class="badges" id="mBadges"></div>
+      </div>
+    </div>
+
+    <div class="profileBody">
+      <div class="section">
+        <h4>O que faz</h4>
+        <p id="mAbout" class="text"></p>
+      </div>
+
+      <div class="twoCols">
+        <div class="section">
+          <h4>Responsabilidades</h4>
+          <ul id="mResp" class="list"></ul>
+        </div>
+
+        <div class="section">
+          <h4>Ferramentas / Sistemas</h4>
+          <ul id="mTools" class="list"></ul>
+        </div>
+      </div>
+
+      <div class="twoCols">
+        <div class="section">
+          <h4>Contato</h4>
+          <div class="kv">
+            <div><span class="k">E-mail</span><span id="mEmail" class="v">-</span></div>
+            <div><span class="k">Ramal</span><span id="mExt" class="v">-</span></div>
+            <div><span class="k">Turno</span><span id="mShift" class="v">-</span></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>Projetos / Rotinas</h4>
+          <ul id="mProjects" class="list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="backdrop" id="backdrop"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
