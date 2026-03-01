@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CPD | Equipe</title>
+  <title>Organograma | Empresa</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,26 +11,61 @@
 <header class="top">
   <div class="topInner">
     <div class="brand">
-      <div class="logo">CPD</div>
+      <div class="logoWrap">
+        <!-- Troque pelo logo da empresa -->
+        <img class="logoImg" src="assets/logo.png" alt="Logo da empresa" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid';" />
+        <div id="logoFallback" class="logoFallback" style="display:none;">ORG</div>
+      </div>
       <div>
-        <h1>Equipe do CPD</h1>
-        <p class="muted">Conheça o time • Funções • Responsabilidades</p>
+        <h1>Organograma da Empresa</h1>
+        <p class="muted">Clique em um card para ver detalhes • Funções • Responsabilidades</p>
       </div>
     </div>
 
     <div class="actions">
-      <input id="search" class="input" type="search" placeholder="Buscar pessoa..." autocomplete="off" />
+      <input id="search" class="input" type="search" placeholder="Buscar por nome, cargo ou setor..." autocomplete="off" />
+      <button id="btnClear" class="btn ghost" title="Limpar busca">Limpar</button>
     </div>
+  </div>
+
+  <div class="filters">
+    <button class="pill active" data-filter="all">Todos</button>
+    <button class="pill" data-filter="donos">Donos</button>
+    <button class="pill" data-filter="diretoria">Diretoria</button>
+    <button class="pill" data-filter="financeiro">Financeiro</button>
+    <button class="pill" data-filter="rh">RH</button>
+    <button class="pill" data-filter="ti">T.I</button>
+    <button class="pill" data-filter="cpd">CPD</button>
+    <button class="pill" data-filter="marketing">Marketing</button>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section class="card">
-    <h2>Time</h2>
-    <p class="muted">Clique em um card para ver o perfil completo.</p>
+  <section class="hero">
+    <div class="heroCard">
+      <div class="heroLeft">
+        <h2>Equipe e Setores</h2>
+        <p class="muted">
+          Use a busca para encontrar alguém rápido, ou clique nos filtros por setor.
+          Cada perfil pode ter contato, responsabilidades, ferramentas e rotinas.
+        </p>
+      </div>
+      <div class="heroRight">
+        <div class="stat">
+          <div class="statNum" id="statTotal">0</div>
+          <div class="statLabel">Pessoas</div>
+        </div>
+        <div class="stat">
+          <div class="statNum" id="statSectors">0</div>
+          <div class="statLabel">Setores</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div id="grid" class="grid" aria-label="Lista de pessoas do CPD"></div>
+  <section id="sections" class="sections" aria-label="Seções por setor">
+    <!-- preenchido pelo JS -->
   </section>
 
 </main>
@@ -47,6 +82,11 @@
         <p id="mRole" class="muted">Cargo</p>
 
         <div class="badges" id="mBadges"></div>
+
+        <div class="metaLine">
+          <span class="metaChip" id="mDept">Setor</span>
+          <span class="metaChip" id="mLevel">Nível</span>
+        </div>
       </div>
     </div>
 
