@@ -387,3 +387,25 @@ h1{ margin:0; font-size: 17px; color: var(--text); }
   font-size: 13px;
   color: rgba(11,26,20,0.92);
 }
+/* =========================
+   TEMA ESCURO (PRIMEIRO TEMA)
+========================= */
+
+body.dark{
+  --bg:#0b1220;
+  --card:#111a2e;
+  --line:#22304f;
+  --text:#eaf2ff;
+  --muted:#a7b7d6;
+
+  --accent:#4cc9f0;
+  --accent2:#ffb703;
+  --ok:#2dd4bf;
+
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(76,201,240,0.16), transparent 60%),
+    radial-gradient(900px 500px at 85% 20%, rgba(255,183,3,0.10), transparent 60%),
+    var(--bg);
+
+  color:var(--text);
+}
