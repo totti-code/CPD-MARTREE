@@ -6,136 +6,142 @@
   <title>Organograma | Empresa</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
-<header class="top">
-  <div class="topInner">
-    <div class="brand">
-      <div class="logoWrap">
-        <!-- Troque pelo logo da empresa -->
-        <img class="logoImg" src="assets/logo.png" alt="Logo da empresa"
-             onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid';" />
-        <div id="logoFallback" class="logoFallback" style="display:none;">ORG</div>
-      </div>
-      <div>
-        <h1>Organograma da Empresa</h1>
-        <p class="muted">Clique em um card para ver detalhes • Funções • Responsabilidades</p>
-      </div>
-    </div>
-
-    <!-- ✅ AQUI: dentro do actions -->
-    <div class="actions">
-      <input id="search" class="input" type="search"
-             placeholder="Buscar por nome, cargo ou setor..." autocomplete="off" />
-
-      <!-- ✅ BOTÃO TEMA -->
-      <button id="btnTheme" class="btn ghost" title="Alternar tema">Tema</button>
-
-      <button id="btnClear" class="btn ghost" title="Limpar busca">Limpar</button>
-    </div>
-  </div>
-
-  <div class="filters">
-    <button class="pill active" data-filter="all">Todos</button>
-    <button class="pill" data-filter="donos">Donos</button>
-    <button class="pill" data-filter="diretoria">Diretoria</button>
-    <button class="pill" data-filter="financeiro">Financeiro</button>
-    <button class="pill" data-filter="rh">RH</button>
-    <button class="pill" data-filter="ti">T.I</button>
-    <button class="pill" data-filter="cpd">CPD</button>
-    <button class="pill" data-filter="marketing">Marketing</button>
-  </div>
-</header>
-
-<main class="wrap">
-
-  <section class="hero">
-    <div class="heroCard">
-      <div class="heroLeft">
-        <h2>Equipe e Setores</h2>
-        <p class="muted">
-          Use a busca para encontrar alguém rápido, ou clique nos filtros por setor.
-          Cada perfil pode ter contato, responsabilidades, ferramentas e rotinas.
-        </p>
-      </div>
-      <div class="heroRight">
-        <div class="stat">
-          <div class="statNum" id="statTotal">0</div>
-          <div class="statLabel">Pessoas</div>
+  <header class="top">
+    <div class="topInner">
+      <div class="brand">
+        <div class="logoWrap">
+          <!-- Troque pelo logo da empresa -->
+          <img
+            class="logoImg"
+            src="assets/logo.png"
+            alt="Logo da empresa"
+            onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid';"
+          />
+          <div id="logoFallback" class="logoFallback" style="display:none;">ORG</div>
         </div>
-        <div class="stat">
-          <div class="statNum" id="statSectors">0</div>
-          <div class="statLabel">Setores</div>
+
+        <div>
+          <h1>Organograma da Empresa</h1>
+          <p class="muted">Clique em um card para ver detalhes • Funções • Responsabilidades</p>
         </div>
       </div>
+
+      <div class="actions">
+        <input
+          id="search"
+          class="input"
+          type="search"
+          placeholder="Buscar por nome, cargo ou setor..."
+          autocomplete="off"
+        />
+        <button id="btnClear" class="btn ghost" title="Limpar busca">Limpar</button>
+      </div>
     </div>
-  </section>
 
-  <section id="sections" class="sections" aria-label="Seções por setor">
-    <!-- preenchido pelo JS -->
-  </section>
+    <div class="filters">
+      <button class="pill active" data-filter="all">Todos</button>
+      <button class="pill" data-filter="donos">Donos</button>
+      <button class="pill" data-filter="diretoria">Diretoria</button>
+      <button class="pill" data-filter="financeiro">Financeiro</button>
+      <button class="pill" data-filter="rh">RH</button>
+      <button class="pill" data-filter="ti">T.I</button>
+      <button class="pill" data-filter="cpd">CPD</button>
+      <button class="pill" data-filter="marketing">Marketing</button>
+    </div>
+  </header>
 
-</main>
+  <main class="wrap">
+    <section class="hero">
+      <div class="heroCard">
+        <div class="heroLeft">
+          <h2>Equipe e Setores</h2>
+          <p class="muted">
+            Use a busca para encontrar alguém rápido, ou clique nos filtros por setor.
+            Cada perfil pode ter contato, responsabilidades, ferramentas e rotinas.
+          </p>
+        </div>
 
-<!-- MODAL PERFIL -->
-<div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modalBox" role="document" aria-label="Perfil da pessoa">
-    <button id="closeModal" class="btn ghost close" aria-label="Fechar">✕</button>
+        <div class="heroRight">
+          <div class="stat">
+            <div class="statNum" id="statTotal">0</div>
+            <div class="statLabel">Pessoas</div>
+          </div>
 
-    <div class="profileHeader">
-      <img id="mAvatar" class="avatarLg" src="" alt="" />
-      <div class="profileTitle">
-        <h3 id="mName">Nome</h3>
-        <p id="mRole" class="muted">Cargo</p>
-
-        <div class="badges" id="mBadges"></div>
-
-        <div class="metaLine">
-          <span class="metaChip" id="mDept">Setor</span>
-          <span class="metaChip" id="mLevel">Nível</span>
+          <div class="stat">
+            <div class="statNum" id="statSectors">0</div>
+            <div class="statLabel">Setores</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="profileBody">
-      <div class="section">
-        <h4>O que faz</h4>
-        <p id="mAbout" class="text"></p>
+    <section id="sections" class="sections" aria-label="Seções por setor">
+      <!-- preenchido pelo JS -->
+    </section>
+  </main>
+
+  <!-- MODAL PERFIL -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modalBox" role="document" aria-label="Perfil da pessoa">
+      <button id="closeModal" class="btn ghost close" aria-label="Fechar">✕</button>
+
+      <div class="profileHeader">
+        <img id="mAvatar" class="avatarLg" src="" alt="" />
+
+        <div class="profileTitle">
+          <h3 id="mName">Nome</h3>
+          <p id="mRole" class="muted">Cargo</p>
+
+          <div class="badges" id="mBadges"></div>
+
+          <div class="metaLine">
+            <span class="metaChip" id="mDept">Setor</span>
+            <span class="metaChip" id="mLevel">Nível</span>
+          </div>
+        </div>
       </div>
 
-      <div class="twoCols">
+      <div class="profileBody">
         <div class="section">
-          <h4>Responsabilidades</h4>
-          <ul id="mResp" class="list"></ul>
+          <h4>O que faz</h4>
+          <p id="mAbout" class="text"></p>
         </div>
 
-        <div class="section">
-          <h4>Ferramentas / Sistemas</h4>
-          <ul id="mTools" class="list"></ul>
-        </div>
-      </div>
+        <div class="twoCols">
+          <div class="section">
+            <h4>Responsabilidades</h4>
+            <ul id="mResp" class="list"></ul>
+          </div>
 
-      <div class="twoCols">
-        <div class="section">
-          <h4>Contato</h4>
-          <div class="kv">
-            <div><span class="k">E-mail</span><span id="mEmail" class="v">-</span></div>
-            <div><span class="k">Ramal</span><span id="mExt" class="v">-</span></div>
-            <div><span class="k">Turno</span><span id="mShift" class="v">-</span></div>
+          <div class="section">
+            <h4>Ferramentas / Sistemas</h4>
+            <ul id="mTools" class="list"></ul>
           </div>
         </div>
 
-        <div class="section">
-          <h4>Projetos / Rotinas</h4>
-          <ul id="mProjects" class="list"></ul>
+        <div class="twoCols">
+          <div class="section">
+            <h4>Contato</h4>
+            <div class="kv">
+              <div><span class="k">E-mail</span><span id="mEmail" class="v">-</span></div>
+              <div><span class="k">Ramal</span><span id="mExt" class="v">-</span></div>
+              <div><span class="k">Turno</span><span id="mShift" class="v">-</span></div>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4>Projetos / Rotinas</h4>
+            <ul id="mProjects" class="list"></ul>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="backdrop" id="backdrop"></div>
   </div>
 
-  <div class="backdrop" id="backdrop"></div>
-</div>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
