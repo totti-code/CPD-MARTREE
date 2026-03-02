@@ -13,7 +13,8 @@
     <div class="brand">
       <div class="logoWrap">
         <!-- Troque pelo logo da empresa -->
-        <img class="logoImg" src="assets/logo.png" alt="Logo da empresa" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid';" />
+        <img class="logoImg" src="assets/logo.png" alt="Logo da empresa"
+             onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid';" />
         <div id="logoFallback" class="logoFallback" style="display:none;">ORG</div>
       </div>
       <div>
@@ -22,8 +23,14 @@
       </div>
     </div>
 
+    <!-- ✅ AQUI: dentro do actions -->
     <div class="actions">
-      <input id="search" class="input" type="search" placeholder="Buscar por nome, cargo ou setor..." autocomplete="off" />
+      <input id="search" class="input" type="search"
+             placeholder="Buscar por nome, cargo ou setor..." autocomplete="off" />
+
+      <!-- ✅ BOTÃO TEMA -->
+      <button id="btnTheme" class="btn ghost" title="Alternar tema">Tema</button>
+
       <button id="btnClear" class="btn ghost" title="Limpar busca">Limpar</button>
     </div>
   </div>
