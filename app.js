@@ -564,3 +564,25 @@ window.addEventListener("keydown", (e)=>{
 
 // init
 render();
+const btnTheme = document.getElementById("btnTheme");
+
+function loadTheme(){
+  const saved = localStorage.getItem("site_theme");
+  if(saved === "dark"){
+    document.body.classList.add("dark");
+  }
+}
+
+function toggleTheme(){
+  document.body.classList.toggle("dark");
+
+  if(document.body.classList.contains("dark")){
+    localStorage.setItem("site_theme","dark");
+  } else {
+    localStorage.setItem("site_theme","light");
+  }
+}
+
+btnTheme.addEventListener("click", toggleTheme);
+
+loadTheme();
